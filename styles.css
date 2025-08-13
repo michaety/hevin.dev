@@ -19,10 +19,18 @@ header {
     z-index: 1000;
 }
 
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
 header h1 {
-    margin: 0;
+    margin: 0 0 0 auto;
     font-size: 2.5em;
     font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
 }
 
 nav {
@@ -39,6 +47,16 @@ nav a {
 
 nav a:hover {
     color: #ff9900; /* Accent color, inferred as orange for highlights */
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 0 10px;
 }
 
 /* Hero Section */
@@ -226,11 +244,28 @@ footer {
     .hero p {
         font-size: 1.2em;
     }
-    nav {
-        display: flex;
-        flex-direction: column;
+    .hamburger {
+        display: block;
     }
-    nav a {
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        width: 100%;
+        background-color: #000000;
+        padding: 10px 0;
+        z-index: 999;
+    }
+    #nav-menu.active {
+        display: flex;
+    }
+    #nav-menu a {
         margin: 10px 0;
+        text-align: center;
+    }
+    nav {
+        margin-top: 0;
     }
 }

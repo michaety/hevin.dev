@@ -9,8 +9,11 @@
 </head>
 <body>
     <header>
-        <h1>hevin.dev</h1>
-        <nav>
+        <div class="header-container">
+            <button id="menu-toggle" class="hamburger">☰</button>
+            <h1>hevin.dev</h1>
+        </div>
+        <nav id="nav-menu">
             <a href="#services">Services</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#faq">FAQ</a>
@@ -131,5 +134,11 @@
         <p>&copy; 2025 hevin.dev. All rights reserved.</p>
         <p>Email: info@hevin.dev | Phone: (123) 456-7890 | Location: [Your City]</p>
     </footer>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
